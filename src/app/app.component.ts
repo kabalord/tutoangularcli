@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'tutoangularcli';
+  title = 'Webapp de angular 7 con angular CLI corriendo!';
 }
