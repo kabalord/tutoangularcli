@@ -1,0 +1,100 @@
+<h3 style="color: blue;">
+	{{titulo}}
+</h3>
+
+<div style="margin-bottom: 20px;">
+	<strong>Empleado estrella:</strong>
+</div>
+
+
+<div *ngIf="trabajador_externo == true">
+	<button (click)="cambiarExterno(false)">Mostrar empleado</button>
+
+	<ul>
+		<li>{{trabajadores[1].nombre}}</li>
+		<li>{{trabajadores[1].edad}}</li>
+		<li>{{trabajadores[1].cargo}}</li>
+		<li *ngIf="trabajadores[1].contratado == true">Esta contratado</li>
+		<li *ngIf="trabajadores[1].contratado == false">No esta contratado</li>
+	</ul>
+</div>
+
+<div *ngIf="trabajador_externo == false">
+	<button (click)="cambiarExterno(true)">Mostrar trabajador</button>
+
+	<ul>
+		<li>{{empleado.nombre}}</li>
+		<li>{{empleado.edad}}</li>
+		<li>{{empleado.cargo}}</li>
+		<li *ngIf="empleado.contratado == true">Esta contratado</li>
+		<li *ngIf="empleado.contratado == false">No esta contratado</li>
+	</ul>
+</div>
+
+<hr>
+
+<div>
+	<h3>Listado de empleados</h3>
+</div>
+
+<div>
+	<ul>
+		<li *ngFor="let empleado of trabajadores; let i = index">
+			<strong>Empleado {{i+1}}:</strong>
+			<ul>
+				<li>{{empleado.nombre}}</li>
+				<li>{{empleado.edad}}</li>
+				<li>{{empleado.cargo}}</li>
+				<li *ngIf="empleado.contratado == true">Esta contratado</li>
+				<li *ngIf="empleado.contratado == false">No esta contratado</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+
+<hr>
+
+<h3>Colores Switch</h3>
+<ul [ngSwitch]="color">
+	<li *ngSwitchCase="'red'" [ngStyle]="{
+	'background':color,
+	'color':'white',
+	'padding':'20px'
+	}">Es de color ROJO</li> <!--aca debemos utilizar las comillas dentro de las comillas para que lo reconozca porque el valor que viene por defecto es un string-->
+	<li *ngSwitchCase="'green'" [ngStyle]="{
+	'background':color,
+	'color':'white',
+	'padding':'20px'
+	}">Es de color VERDE</li>
+	<li *ngSwitchCase="'blue'" [ngStyle]="{
+	'background':color,
+	'color':'white',
+	'padding':'20px'
+	}">Es de color AZUL</li>
+</ul>
+
+<hr>
+
+<h3>Selector de colores:</h3>
+<button (click)="logColorSeleccionado()">MOSTRAR LOG</button>
+<input type="text" [(ngModel)]="color_seleccionado"/>
+<pre 
+[ngStyle]="{'max-width':'200px'}" 
+[style.border]="color_seleccionado == 'red' ? '5px solid black' : '1px solid green'"
+[class.fondoAzul]="color_seleccionado == 'blue'"
+[ngClass]="{
+	fondoVerde: color_seleccionado == 'green',
+	fondoRojo: color_seleccionado == 'red',
+	estiloLetra: 1 == 1
+}"
+>
+	<strong [ngClass]="['colorLetra', 'familiaLetra']">Color elegido:</strong>
+	{{color_seleccionado}}
+</pre>
+<div [ngStyle]="{
+	'background':color_seleccionado,
+	'width':'200px',
+	'height':'200px',
+	'float':'left'
+	}">		
+</div>

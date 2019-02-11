@@ -1,0 +1,25 @@
+<h2>{{titulo}}</h2>
+
+<h3>Listado de prendas de ropa</h3>
+<br/>
+{{ fecha | date:'dd/MM/yyyy' }}<br/><br/>
+
+{{ fecha }}<br/><br/>
+
+{{ fecha | date:'fullDate'| uppercase }}<br/><br/>
+
+{{ nombre | uppercase }}<br/><br/>
+
+{{ 40 | conversor: 50 }}
+
+<br/>
+<br/>
+<input type="" name="" [(ngModel)]="prenda_a_guardar"><button (click)="guardarPrenda()">Añadir prenda</button>
+<p *ngIf="prenda_a_guardar">La prenda a guardar es: <strong>{{prenda_a_guardar}}</strong></p>
+<ul>
+	<li *ngFor="let prenda of listado_ropa; let i = index">
+		{{i}} {{prenda}}
+		<button (click)="eliminarPrenda(i)">Eliminar</button>
+	</li>
+</ul>
+

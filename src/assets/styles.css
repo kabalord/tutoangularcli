@@ -1,0 +1,28 @@
+.fondoAzul {
+	background: lightblue;
+}
+
+.fondoVerde {
+	background: lightgreen;
+}
+
+.fondoRojo {
+	background: lightcoral;
+}
+
+.estiloLetra {
+	font-style: italic;
+}
+
+.colorLetra {
+	color: brown;
+}
+
+.familiaLetra {
+	font-family: fantasy;
+}
+
+.activado {
+	font-weight: bold;
+	background-color: yellow;
+}

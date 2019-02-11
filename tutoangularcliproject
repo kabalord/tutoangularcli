@@ -3,6 +3,9 @@
 	[
 		{
 			"path": "."
+		},
+		{
+			"path": "/opt/lampp/docs/apirest"
 		}
 	]
 }
