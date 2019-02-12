@@ -8,7 +8,7 @@ export class PlantillasComponent {
 	public titulo;
 	public administrador; 
 
-	public dato_externo = "Walter Roa Serrano";
+	public dato_externo = "Walter Roa Serrano utilizando @input";
 	public identity = {
 		id:1,
 		web: 'http://fx.timemachinevr.co/personalPortfolioFrances/',
@@ -22,6 +22,12 @@ export class PlantillasComponent {
 
 	cambiar(value){
 		this.administrador = value;
+	}
+
+	public datos_del_hijo;
+	recibirDatos(event){
+		console.log(event);
+		this.datos_del_hijo = event;
 	}
 }
 

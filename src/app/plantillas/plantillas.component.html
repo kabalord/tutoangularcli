@@ -3,12 +3,17 @@
 <componente-hijo 
 	[texto1]="dato_externo"
 	[texto2]="identity.web"
+	(desde_el_hijo)="recibirDatos($event)"
 >
 </componente-hijo>
 <hr/>
 
 
-
+<div *ngIf="datos_del_hijo">
+	<h1>{{datos_del_hijo.nombre}}</h1>
+	<h1>{{datos_del_hijo.web}}</h1>
+	<h1>{{datos_del_hijo.twitter}}</h1>
+</div>
 
 
 

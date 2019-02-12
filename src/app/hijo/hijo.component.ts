@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, Output, EventEmitter} from '@angular/core';
 
 @Component({
 	selector: 'componente-hijo',
@@ -8,7 +8,7 @@ import {Component, Input} from '@angular/core';
 			<li>{{propiedad_uno}}</li>
 			<li>{{propiedad_dos}}</li>
 		</ul>
-
+		<button (click)="enviar()">Enviar datos al componente padre</button>
 	`
 })
 
@@ -18,6 +18,8 @@ export class hijoComponent {
 	@Input('texto1') propiedad_uno: String;
 	@Input('texto2') propiedad_dos: String;
 
+	@Output() desde_el_hijo = new EventEmitter();
+
 	constructor(){
 		this.title = "componente Hijo";
 	}
@@ -25,6 +27,17 @@ export class hijoComponent {
 	ngOnInit(){
 		console.log(this.propiedad_uno);
 		console.log(this.propiedad_dos);
+		this.enviar();
 	}
+
+	enviar(){
+		this.desde_el_hijo.emit({
+			nombre: 'Walter Roa Serrano utilizando Output',
+			web: 'http://fx.timemachinevr.co/personalPortfolioFrances/',
+			twitter: '@kabalord'
+
+		});
+	}
+
 
 }
