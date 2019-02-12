@@ -1,3 +1,24 @@
+
+<h1>Propiedades Input Angular</h1>
+<componente-hijo 
+	[texto1]="dato_externo"
+	[texto2]="identity.web"
+>
+</componente-hijo>
+<hr/>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <h4>{{titulo}}</h4>
 
 <div *ngIf="administrador; then admin else noAdmin"></div>
@@ -11,4 +32,5 @@
 	<strong style="background: red; color: white;">No eres el administrador de la WebApp</strong>
 	<button (click)="cambiar(true)">Cambiar</button>
 </ng-template>
+
 
